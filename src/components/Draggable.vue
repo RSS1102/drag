@@ -1,7 +1,7 @@
 <template>
   <div class="move">
     <div class="darg"></div>
-    <div class="dom"></div>
+    <div class="dom">moveDom</div>
   </div>
 </template>
 
