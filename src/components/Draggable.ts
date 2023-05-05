@@ -53,7 +53,8 @@ export function customDraggable(dragDom: HTMLElement, moveDom: HTMLElement) {
     moveY = y;
   });
   
-  dragDom.addEventListener('mouseup', function () {
+  dragDom.addEventListener('mouseup', function (e) {
+    e.preventDefault()
     dragDom.removeEventListener('mousemove', mouseMove);
     moveX = x;
     moveY = y;
