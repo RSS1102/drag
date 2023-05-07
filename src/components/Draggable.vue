@@ -1,37 +1,44 @@
 <template>
-  <div class="move">
-    <div class="darg"></div>
-    <div class="dom">moveDom</div>
+  <div id="box">
+    <div id="cell"></div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { nextTick } from 'vue';
-import { customDraggable } from './Draggable'
-nextTick(() => {
-  const dragDom = document.querySelector('.darg') as HTMLElement;
-  const moveDom = document.querySelector('.move') as HTMLElement;
-  customDraggable(dragDom, moveDom)
+import { customDraggable } from './Draggable';
+nextTick(()=>{
+  const cell=document.querySelector('#cell') as HTMLElement
+   const box = document.querySelector('#box') as HTMLElement
+   console.log(cell, box);
+customDraggable(cell, box)
+
 })
+
 </script>
 
-<style scoped>
-.move {
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
   position: relative;
-  height: 50px;
-  width: 100px;
-  background: rgb(2, 1, 1);
+  height: 10000px;
 }
 
-.darg {
-  height: 50px;
+#box {
+  position: fixed;
+  left: 200px;
+  top: 200px;
   width: 100px;
-  background: rgb(17, 216, 17);
+  height: 100px;
+  background-color: aqua;
 }
-
-.dom {
-  height: 50px;
-  width: 100px;
-  background: rgb(2, 1, 1);
+#cell{
+ width: 100px;
+  height: 40px;
+  background-color: rgb(255, 0, 0);
 }
 </style>
